@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message>
+	<head>
+		<version type="string">1.0.0</version>
+		<tid type="int">22222</tid><!-- 交易号 -->
+		<seqSeries type="int"></seqSeries><!-- 序列类别号(通讯模式) -->
+		<seqNo type="long"></seqNo><!-- 序列号 -->
+		<fieldCount type="int"></fieldCount><!-- 消息正文个数  -->
+		<contentLen type="int"></contentLen><!-- 正文长度 -->
+	</head>
+	
+	<!-- 消息域列表 -->
+	<fields> 
+		<field>
+			<pid>231231</pid><!-- 协议ID -->
+			
+		 </field>
+		 <field>
+			<pid>231231</pid><!-- 协议ID -->
+			
+		 </field>
+		 <field>
+			<pid>231231</pid><!-- 协议ID -->
+			
+		 </field>
+	
+		</fields>
+</message>
