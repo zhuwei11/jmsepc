@@ -3,13 +3,7 @@
  */
 package com.zw.jmsepc.biz.base;
 
-import java.util.Date;
-
 import javax.jms.Queue;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.zw.jmsepc.config.SysConfig;
 import com.zw.jmsepc.protocol.p110.P110990;
@@ -23,6 +17,7 @@ import com.zw.jmsepc.silkie.jms.message.JmsBody;
 import com.zw.jmsepc.silkie.jms.message.P999999;
 import com.zw.jmsepc.silkie.jms.message.field.ByteDataField;
 import com.zw.jmsepc.silkie.jms.message.impl.DefaultJmsMessage;
+import com.zw.jmsepc.spring.SpringBeanManager;
 
 
 /**
@@ -78,14 +73,9 @@ public abstract class BaseTraderEvent extends BaseEpcEvent {
 	  if(p999999 == null) {
 		  return;
 	  }
-//	  SysConfig sysConfig = SpringBeanManager.getBean("sysConfig", SysConfig.class);
-//	  Queue traderResponse = SpringBeanManager.getBean("traderResponse", Queue.class);
-//	  JmsMessageHandler jmsMessageHandler = SpringBeanManager.getBean("jmsMessageHandler", JmsMessageHandler.class);
-	  @SuppressWarnings("resource")
-	  ApplicationContext ac = new FileSystemXmlApplicationContext("classpath:spring-context.xml");
-	  SysConfig sysConfig = (SysConfig) ac.getBean("sysConfig");
-	  Queue traderResponse = (Queue) ac.getBean("traderResponse");
-	  JmsMessageHandler jmsMessageHandler = (JmsMessageHandler) ac.getBean("jmsMessageHandler");
+	  SysConfig sysConfig = SpringBeanManager.getBean("sysConfig", SysConfig.class);
+	  Queue traderResponse = SpringBeanManager.getBean("traderResponse", Queue.class);
+	  JmsMessageHandler jmsMessageHandler = SpringBeanManager.getBean("jmsMessageHandler", JmsMessageHandler.class);
 	  DefaultJmsMessage message = new DefaultJmsMessage();
 	  JmsBody body = new JmsBody();
 	  for(ByteDataField field : fields) {

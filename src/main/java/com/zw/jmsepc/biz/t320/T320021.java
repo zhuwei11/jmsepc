@@ -3,12 +3,8 @@
  */
 package com.zw.jmsepc.biz.t320;
 
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.zw.jmsepc.biz.base.BaseTraderEvent;
 import com.zw.jmsepc.protocol.EpcPidConstant;
@@ -56,22 +52,6 @@ public class T320021 extends BaseTraderEvent {
 	protected void doBiz() throws Exception {
 		
 		try {
-			@SuppressWarnings("resource")
-			ApplicationContext ac = new FileSystemXmlApplicationContext("classpath:spring-context.xml");
-//			MemberAccount account = new MemberAccount();
-//			AllAccounts allAccounts = (AllAccounts) ac.getBean("allAccounts");
-//			List<MemberAccount> list = allAccounts.getAll();
-//			for(MemberAccount memberAccount : list) {
-//				if(memberAccount.getId() == p120020.getMemberId()) {
-//					account = memberAccount;
-//				}
-//			}
-//			if(account.getBalance() > 0) {
-//				account.setBalance(account.getBalance() - 1);
-//			}else {
-//				responseCommonMessage(EpcTidConstant.T320022, EpcErrCode.UNKNOWN_ERR, "提现失败，余额不足");
-//				return;
-//			}
 			responseCommonMessage(EpcTidConstant.T320022, EpcErrCode.SUCCESS, "提现成功");
 		
 		} catch (Exception e) {

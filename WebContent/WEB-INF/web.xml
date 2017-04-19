@@ -23,6 +23,9 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:spring-context.xml</param-value>
   </context-param>
+  <listener>
+      <listener-class>com.zw.jmsepc.lisnter.MyListener</listener-class>
+  </listener>
 	 <!-- Spring监听器 -->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
